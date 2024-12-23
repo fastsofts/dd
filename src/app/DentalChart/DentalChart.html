@@ -1,0 +1,79 @@
+<div [style]="{'width':'100vw','height':'100vh'}">
+   <Sidenav [categories]="dentalcategoryformat"></Sidenav>
+   <div id = "dentalwrapper" [ngClass] = "{'expand': !getSideWindowView(), 'shrink': getSideWindowView()}">
+      <div class = "toptext">
+         <label [ngClass] = "{'rightletter': true  , 'expanded': !getSideWindowView()}">R</label> 
+         <label [ngClass] = "{'leftletter': true}">L</label> 
+      </div>   
+      <div class = "bottomtext" [ngStyle]="{'top': getsvgtop()}">
+        <label [ngClass] = "{'rightletter': true  , 'expanded': !getSideWindowView()}">R</label> 
+        <label [ngClass] = "{'leftletter': true}">L</label> 
+      </div>    
+      <div id = "dentalchartholder">
+         <div id = "dentalchart" class="dentalchart" [style]="{'gridTemplateColumns': gridTemplateColumns(getFirstKeyNumberofColumn)}">         
+             @for (keys of dentalFormatMainkeys(); track keys; let mainindex = $index) {
+                   @if (!dentalFormatMainkeyValues(keys).addemptyBlock){
+                        @if (dentalFormatMainkeyValues(keys).show){         
+                          <div id = '{{this.dentalformat[keys].position}}_{{this.dentalformat[keys].shapeID}}'  [attr.class] = "this.dentalformat[keys].class" *ngIf="getChipsButtonState(this.dentalformat[keys].type)">
+                            <svg   id = "dentalchips" height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;" [attr.viewBox]="viewbox(dentalFormatMainkeyValues(keys).width,dentalFormatMainkeyValues(keys).height)"  preserveAspectRatio="xMidYMid meet">
+                                 <g transform="scale(.93) translate(0,3)"> 
+                                    @for (subkeys of getBlock(keys); track subkeys; let subindex = $count){
+                                       @if (this.dentalformat[keys].block[subkeys].type === "path"){
+                                            <path class="path" [attr.selected] = "0" (click) = "ClickDiagram($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].clickedShapeColor,this.dentalformat[keys].block[subkeys],keys,subkeys,this.dentalformat[keys].block[subkeys].noclick)" (mouseover)="HoverEntry($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" (mouseout)="HoverExit($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex' [attr.d]="getPathdata(keys,subkeys)"/>
+                                       }
+                                       @if (this.dentalformat[keys].block[subkeys].type === "rect"){
+                                            <rect class="rect" [attr.selected] = "0" (click) = "ClickDiagram($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].clickedShapeColor,this.dentalformat[keys].block[subkeys],keys,subkeys,this.dentalformat[keys].block[subkeys].noclick)" (mouseover)="HoverEntry($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" (mouseout)="HoverExit($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex'  [attr.x]="this.dentalformat[keys].block[subkeys].x" [attr.y]="this.dentalformat[keys].block[subkeys].y" [attr.width]="this.dentalformat[keys].block[subkeys].width"  [attr.height]="this.dentalformat[keys].block[subkeys].height" />
+                                       }   
+                                       @if (this.dentalformat[keys].block[subkeys].type === "circle"){
+                                            <circle class="circle" [attr.selected] = "0" (click) = "ClickDiagram($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].clickedShapeColor,this.dentalformat[keys].block[subkeys],keys,subkeys,this.dentalformat[keys].block[subkeys].noclick)" (mouseover)="HoverEntry($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" (mouseout)="HoverExit($event,mainindex,subindex,this.dentalformat[keys].block[subkeys].id,this.dentalformat[keys].block[subkeys].hoveredShapeColor,this.dentalformat[keys].block[subkeys].click,this.dentalformat[keys].block[subkeys].noclick)" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex'  [attr.x]="this.dentalformat[keys].block[subkeys].x" [attr.y]="this.dentalformat[keys].block[subkeys].y" [attr.r]="this.dentalformat[keys].block[subkeys].radius"/>
+                                       }                                
+                                       @if (this.dentalformat[keys].block[subkeys].type === "text"){
+                                             @if (!teethalphabet){
+                                                 <text class="text" [attr.x] = "this.dentalformat[keys].block[subkeys].centerAlign?'45%':''" [attr.y] = "this.dentalformat[keys].block[subkeys].centerAlign?'50%':''" [attr.font-size] = "this.dentalformat[keys].block[subkeys].fontSize" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"   [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex' [attr.stroke-width] = "this.dentalformat[keys].block[subkeys].borderThick" [attr.dominant-baseline] = "this.dentalformat[keys].block[subkeys].verticalAlign" [attr.text-align] = "this.dentalformat[keys].block[subkeys].horizontalAlign" >
+                                                     {{this.dentalformat[keys].block[subkeys].text}}
+                                                 </text>                                    
+                                            }@else {
+                                                <text class="text" [attr.x] = "this.dentalformat[keys].block[subkeys].centerAlign?'45%':''" [attr.y] = "this.dentalformat[keys].block[subkeys].centerAlign?'50%':''" [attr.font-size] = "this.dentalformat[keys].block[subkeys].fontSize" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"   [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex' [attr.stroke-width] = "this.dentalformat[keys].block[subkeys].borderThick" [attr.dominant-baseline] = "this.dentalformat[keys].block[subkeys].verticalAlign" [attr.text-align] = "this.dentalformat[keys].block[subkeys].horizontalAlign" >
+                                                     {{this.dentalformat[keys].block[subkeys].textalpha}}
+                                                 </text>                                                  
+                                            }     
+                                       }   
+                                       @if (this.dentalformat[keys].block[subkeys].type === "polygon"){
+                                
+                                       }   
+                                       @if (this.jsonselections[keys] && this.jsonselections[keys][subkeys] && this.jsonselections[keys][subkeys].points && this.jsonselections[keys][subkeys].points.length > 0){
+                                            @for (points of this.jsonselections[keys][subkeys].points; track points; let pointindex = $count){
+                                                  @if (this.clickedpart.click.type === "circle"){
+                                                       <g [attr.id] = '"clickedpoints_"+keys+"_"+subkeys' [attr.transform] = '"translate("+points.x+","+points.y+")"'>
+                                                           <circle class="pointcircle" [attr.selected] = "0"  [attr.stroke] = "this.dentalformat[keys].block[subkeys].click.borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].click.defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].click.borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex+"_"+pointindex'  [attr.cx]="this.dentalformat[keys].block[subkeys].click.x" [attr.cy]="this.dentalformat[keys].block[subkeys].click.y" [attr.r]="this.dentalformat[keys].block[subkeys].click.radius"/>
+                                                       </g>    
+                                                  }     
+                                                  @if (this.clickedpart.click.type === "rect"){
+                                                       <g [attr.id] = '"clickedpoints_"+keys+"_"+subkeys' [attr.transform] = '"translate("+points.x+","+points.y+")"'>
+                                                          <rect class="pointrectangle" [attr.selected] = "0" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex'  [attr.x]="this.dentalformat[keys].block[subkeys].x" [attr.y]="this.dentalformat[keys].block[subkeys].y" [attr.width]="this.dentalformat[keys].block[subkeys].width"  [attr.height]="this.dentalformat[keys].block[subkeys].height" />
+                                                       </g>   
+                                                  }           
+                                                  @if (this.clickedpart.click.type === "path"){
+                                                       <g [attr.id] = '"clickedpoints_"+keys+"_"+subkeys' [attr.transform] = '"translate("+points.x+","+points.y+")"'>
+                                                          <path class="pointpath" [attr.selected] = "0" [attr.stroke] = "this.dentalformat[keys].block[subkeys].borderColor"   [attr.fill] = "this.dentalformat[keys].block[subkeys].defaultShapeColor"  [attr.stroke-width] = 'this.dentalformat[keys].block[subkeys].borderThick'  [attr.id] = 'this.dentalformat[keys].block[subkeys].id+"_"+mainindex+"_"+subindex' [attr.d]="getPointPathdata(keys,subkeys)" [attr.x]="this.dentalformat[keys].block[subkeys].x" [attr.y]="this.dentalformat[keys].block[subkeys].y" [attr.width]="this.dentalformat[keys].block[subkeys].width"  [attr.height]="this.dentalformat[keys].block[subkeys].height" />
+                                                       </g>   
+                                                  }                                                                    
+                                             } 
+                                        }                         
+                                    } 
+                                </g>        
+                            </svg>    
+                         </div>
+                      }@else{
+                         <div [attr.class] = "this.dentalformat[keys].class" *ngIf="getChipsButtonState(this.dentalformat[keys].type)">
+                         </div>               
+                      }       
+                  }@else{
+                        <div [attr.class] = "this.dentalformat[keys].class" *ngIf="getChipsButtonState(this.dentalformat[keys].type)">
+                        </div>              
+                  }
+               }
+          </div>     
+      </div>        
+   </div>   
+</div>   

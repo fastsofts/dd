@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+}
+  
+.mat-mdc-form-field-focus-overlay {
+    background-color: transparent !important;
+}
+
+div[matformfieldlineripple] {
+    display: none;
+}
+
+.mat-mdc-form-field-subscript-wrapper{
+    display:none !important;
+}
+
+.removeicon{
+    cursor:pointer;
+    cursor:url("/images/delete icon.png"),auto;
+}
+
+.dropdown-sort-menu .mdc-button .mdc-button__label{
+    width:100% !important;
+    float: left;
+    right: 25px;
+    display:flex;
+}
+
+.innercategorylistoption{
+    font-size:12px !important;
+}
+
+.innercategorylist{
+    overflow-x:hidden !important;
+}
+
+.innercategoryselect{
+    overflow-x:hidden !important;
+}
+
+#innercategoryselect-panel{
+    overflow-x:hidden !important;
+}
+
+.security .mdc-label{
+    font-size:10px;
+    width:50px;
+    margin-left: -10px;
+}
+
+.security .move{
+   margin-left:20px;
+}
+
+.security .move .mdc-label{
+  margin-left: -15px;
+}  
+
+body{
+    overflow:hidden !important;
+}
+
+
+.cdk-overlay-pane .mat-mdc-select-panel{
+    overflow:hidden !important;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.54); /* Adjust color as necessary */
+}
+
+.mat-mdc-tab-body-wrapper{
+    height:100vh !important;
+}

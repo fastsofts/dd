@@ -1,0 +1,131 @@
+<div id = "sidenav" [ngClass]="{'open': isSideWindowOpen, 'closed': !isSideWindowOpen}" class="animatedsidenav">
+  <div [ngClass]="{'mainwrap': isSideWindowOpen, 'mainwrapminimized': !isSideWindowOpen}">
+    <div class="buttonholder">
+        <mat-chip-listbox aria-span="Item selection" multiple *ngIf="isSideWindowOpen"> 
+            <mat-chip-option 
+               *ngFor="let dgroups of dentalGroups" 
+               [selected]="isSelected(dgroups)"
+               [color]="dgroups.color"
+               (click)="toggleSelection(dgroups)">             
+                {{dgroups.name}} 
+            </mat-chip-option>   
+        </mat-chip-listbox>
+        <button class="dropdown-button" (click)="toggleDropdown($event)" *ngIf="isSideWindowOpen">
+            <div [innerHTML]="getArrowIcon()"></div>
+        </button>
+        <div class="dropdown-menu" *ngIf="!isOpen && isSideWindowOpen">
+            <button class="dropdown-item" *ngFor="let item of items" (click)="selectItem(item)">
+              {{ item }}
+            </button>
+        </div>   
+        <div>
+            <button [ngClass]="{'sidemenu-button':true,'sidemenu-button-expand-position': isSideWindowOpen, 'sidemenu-button-collapse-position': !isSideWindowOpen}" (click)="toggleSideWindow($event)">
+                <div class="sidemenu-toggle" [innerHTML]="getSideWindowActionIcon()"></div>  
+            </button>     
+        </div>       
+    </div>  
+    <div class = "tabholder" *ngIf="isSideWindowOpen">
+        <mat-tab-group (selectedTabChange)="tabclicked($event)">
+            <mat-tab label="Treatment List">
+                <div class="dentalCategories">
+                    <mat-form-field id = "categorylist" floatLabel="always">
+                        <mat-select matNativeControl required [(value)] = "selectedcategory" (selectionChange)="selectedCategory($event)">
+                              <input matInput class = "categorysearchinput"  placeholder ="Search" (input)="categorysearch($event)"/>
+                              <button id = "searchbutton" matPrefix mat-icon-button disabled>
+                                  <mat-icon>search</mat-icon>
+                              </button>
+                              <div id = "scrollselect">
+                                 @for (keys of dentalCategoryFormatMainkeys(); track keys; let categoryindex = $index){
+                                       <mat-option [value]="keys">{{keys}}</mat-option>
+                                 }
+                              </div>   
+                        </mat-select>   
+                    </mat-form-field>
+                 </div>
+                 <div class="optionsWrapper">
+                    <input matInput class = "treatmentsearchinput" placeholder="Search" (input)="treatmentsearch($event)" />
+                    <div class = "sortbutton">
+                       <button [ngClass]="{'sortdropdown-button': isSortOpen || !isSortOpen, 'sortdropdown-button-open' : isSortOpen }"  (click)="toggleSortDropdown($event)" *ngIf="isSideWindowOpen">
+                           <div  [ngClass]="{'sortdropdown': isSortOpen || !isSortOpen, 'sortdropdownhighlight' : isSortOpen }" [innerHTML]="!isSortOpen?sortIcon:sortFilledIcon">
+                           </div>
+                       </button>    
+                    </div>   
+                 </div>                 
+                 <div class="treatmentdetails">
+                    @if (treatments.length > 0){
+                         @for (plans of treatments ; track plans; let planindex = $count){
+                               <div class = "treatmentoptionsholder">
+                                   <div class="treatmentselection" [innerHTML] = "selectedfavourites.includes(plans.id)?starFilledIcon:starIcon" (click) = "addtoFavourites($event,plans.id)"></div>
+                                   <div class = "treatmentcode" (click) = "selectTreatment($event,plans.id)">{{plans.id}}</div>
+                                   <div class = "treatmentname" (click) = "selectTreatment($event,plans.id)">{{plans.name}}</div>
+                               </div>
+                         }      
+                    }@else{
+                        <div class = "treatmentoptionsholder"></div>                                        
+                    }
+                 </div>                                
+            </mat-tab>
+            <mat-tab label="Plan Templates">
+               <div class="planholder">
+                 <div class="newplanadd">
+                     <button class="dropdown-button" (click)="toggleNewDropdown($event)" *ngIf="isSideWindowOpen">
+                         <div>+New</div>
+                     </button>                   
+                 </div>
+               </div>
+            </mat-tab>              
+        </mat-tab-group>               
+    </div> 
+  </div>       
+</div>    
+<div class="dropdown-new-menu" *ngIf="isNewOpen && isSideWindowOpen">
+    <div class="tlabel">Treatment Plan Template</div>
+    <div id = "newtreatmentplan" [style]="{'gridTemplateColumns': 'repeat(3, 1fr)'}">
+        <div class="nickname">
+            <mat-label>Nickname</mat-label>
+            <mat-form-field>
+               <input matInput value="">
+            </mat-form-field>  
+        </div>
+        <div class="category">
+            <mat-label>Category</mat-label>
+            <mat-form-field id = "innercategorylist">
+                <mat-select id = "innercategoryselect" matNativeControl required [(value)] = "selectedlistcategory" (selectionChange)="selectedlistCategory($event)">
+                  <input matInput class = "categorylistsearchinput" placeholer="Search" (input)="categorylistsearch($event)" />
+                   @for (keys of dentalCategoryFormatMainkeys(); track keys; let categoryindex = $index) {
+                         <mat-option class="innercategorylistoption" [value]="keys">{{keys}}</mat-option>
+                   }
+                </mat-select>   
+            </mat-form-field>           
+        </div>
+        <div class="access">
+            <mat-label>Access</mat-label>
+            <div>
+               <mat-radio-group aria-label="Select an option" class="security">
+                  <mat-radio-button class="security" value="1" >Personnal<span class = "smallicon" [innerHTML] = "personalIcon"></span></mat-radio-button>
+                  <mat-radio-button class="security move" value="2">Shared<span class = "smallicon" [innerHTML] = "sharedIcon"></span></mat-radio-button>
+               </mat-radio-group>          
+            </div>    
+        </div>        
+    </div>
+    <div id = "newtreatmentplanaction">
+        <button mat-button class="newtreatmentplansave" *ngIf="isSideWindowOpen">
+            Save
+        </button>         
+        <button mat-button class="newtreatmentplancancel" *ngIf="isSideWindowOpen">
+            Cancel
+        </button>                    
+    </div>
+ </div> 
+ <div class="dropdown-sort-menu" *ngIf="isSortOpen && isSideWindowOpen">
+      @for (sortitem of sortItems; track sortitem; let sortindex = $index) {
+           <div>
+              <button mat-button (click)="selectedSort($event,sortitem.name)" id = "selectoption">
+                  <div>{{sortitem.name}}</div>
+                  <mat-icon id = "selecticon" *ngIf="sortitem.isselected">done</mat-icon>
+                  <mat-icon id = "selecticon" *ngIf="!sortitem.isselected"></mat-icon>                 
+              </button>
+           </div>
+       }   
+       <mat-checkbox  [checked]="setfavourite" (change)="setfavouriteoption($event)" class="favourites">Favourites on Top</mat-checkbox>  
+</div>   

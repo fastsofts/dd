@@ -1,0 +1,48 @@
+{
+  "Favourites":[
+  ],
+  "Base Chart":[
+    {"id":301,"name":"Fissure Sealant - Per Tooth","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffbad2","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":400,"name":"Amalgam Filling","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#999999","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":401,"name":"Composite Filling","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffde00","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":403,"name":"Glass Ionomer","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#61b329","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":409,"name":"Inlay/Onlay - Porcelain/Ceramic","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffffcc","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":416,"name":"Porcelain Crown","drawing":{"type":"ellipse","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#ffffcc","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":417,"name":"Porcelain Bonded Crown","drawing":{"type":"ellipse","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#e0c28d","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":418,"name":"Bonded Crown","drawing":{"type":"ellipse","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#bfaf93","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":419,"name":"Gold Crown","drawing":{"type":"ellipse","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#bfaf93","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":420,"name":"Metal Crown","drawing":{"type":"ellipse","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#000000","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":423,"name":"Post & Core","drawing":{"type":"rectangle","width":16,"height":64,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#000000","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":426,"name":"Pin Retention","drawing":{"type":"rectangle","width":16,"height":16,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#000000","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":431,"name":"Vineer","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#2fbdb3","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}},
+    {"id":500,"name":"RCT - Molar","drawing":{"type":"text","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":[]}}},
+    {"id":501,"name":"RCT - Pre Molar Tooth","drawing":{"type":"text","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":[]}}},
+    {"id":502,"name":"RCT - Incisor","drawing":{"type":"text","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":[]}}},
+    {"id":704,"name":"Full Upper Acrylic Denture","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":["upper_"]}}},
+    {"id":705,"name":"Full Lower Acrylic Denture","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":["lower_"]}}},
+    {"id":706,"name":"Full Upper and Lower Acrylic Denture","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffa500","stroke":"","strokewidth":0,"categories":[],"text":{"name":"RCT","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"categories":["lower_","upper_"]}}},
+    {"id":418,"name":"Partial Acrylic Denture","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#ffa500","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}}
+  ],
+  "Diagnostic Related Services":[
+    {"id":100,"name":"Exam","drawing":{}},
+    {"id":101,"name":"Exam & Scale & Polish","drawing":{}},
+    {"id":117,"name":"Dry Socket","drawing":{}}
+  ],
+  "Periodontic related services":[
+    {"id":210,"name":"Bone Grafting","drawing":{}}
+  ],
+  "Preventive related services":[
+    {"id":301,"name":"Fissure Sealant - Per Tooth","drawing":{}}  
+  ],
+  "Surface Related services":[
+    {"id":401,"name":"Composite Filling","drawing":{"type":"fill","width":0,"height":0,"x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":0,"radiusratioY":0,"fill":"#ffde00","stroke":"","strokewidth":0,"categories":[],"text":{"name":"","fill":"","stroke":"","font":"","dx":0,"dy":0,"categories":[]}}}
+  ],
+  "Crowns and Inlays Related services":[
+    {"id":429,"name":"Emax Crown","drawing":{"type":"ellipse","x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#cccccc","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"Emax","fill":"","stroke":"","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"x":0,"y":0,"categories":[]}}}
+  ],
+  "Bridge Related services":[
+    {"id":900,"name":"Bridge Prep","drawing":{}},
+    {"id":901,"name":"Bridge Try In","drawing":{}},
+    {"id":901,"name":"Bonded Bridge Pontic","drawing":{"type":"ellipse","x":0,"y":0,"moveX":0,"moveY":0,"radiusratioX":1,"radiusratioY":1,"fill":"#cccccc","stroke":"#000000","strokewidth":2,"categories":[],"text":{"name":"Pontic","fill":"","stroke":"","position":"middle","font":{"name":"Arial","size":"21px","weight":600},"dx":0,"dy":0,"x":0,"y":0,"categories":[]}}}
+  ]
+}

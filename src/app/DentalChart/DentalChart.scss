@@ -1,0 +1,100 @@
+.th-gap{
+    width:2vw;
+    height:10px;
+}
+
+.th-group{
+    width:50vw;
+    height:5vh;
+    justify-content: center;
+    display:flex;
+    cursor:pointer;
+}
+
+ .dentalchart{
+    display:grid;
+    gap: 0px;
+    height:100%;
+    padding:15px;
+    padding-top:0px;
+    padding-bottom:0px;
+    /* grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(5vw, 1fr)); 
+    grid-auto-rows: minmax(12vh, auto);  */
+ }
+
+ #dentalwrapper{
+   float:right !important;
+   position:relative;
+   height : 100%;
+   overflow-y: auto;
+   overflow-x:hidden;
+ }
+
+ .expand{
+   width: calc(100vw - 50px);
+ }
+
+ .shrink{
+   width: calc(100vw - 350px);
+ }
+
+ .path{
+    pointer-events: fill !important;
+ }
+
+ .rect{
+    pointer-events: fill !important;
+ }
+
+ .th-background{
+    background: #eeeeee;
+ }
+
+ .toptext{
+   height:20px;
+}   
+
+.toptext .rightletter{
+   float:left;
+   left:0px;
+   position:absolute;  
+}
+
+.expanded{
+  left:0px !important;
+}
+
+.toptext .leftletter{
+   float:left;
+   left:98%;
+   position:absolute;
+}
+
+.bottomtext{
+   height:20px;
+   position:absolute;  
+   top:93%; 
+   width:100%;
+}
+
+.bottomtext .rightletter{
+   float:left;
+   left:0px;
+   position:absolute;  
+}
+
+.bottomtext .leftletter{
+   float:left;
+   left:98%;
+   position:absolute;  
+}  
+
+.dentalchartholder{
+  display:flex;
+  width:100%;
+  height:100%;
+  overflow-x:hidden !important;
+  overflow-y:visible !important;
+}
+
